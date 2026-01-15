@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kubebaseline"
+version = "1.0.0"
+description = "Kubernetes best practices compliance auditing CLI tool"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Diego Braga", email = "diego.braga86@gmail.com"},
+    {name = "kubebaseline contributors"}
+]
+keywords = ["kubernetes", "security", "compliance", "audit", "best-practices"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Security",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "kubernetes>=28.1.0",
+    "pyyaml>=6.0",
+    "rich>=13.0.0",
+    "click>=8.1.0",
+]
+
+[project.scripts]
+kbase = "kbase.cli:main"
+
+[tool.setuptools]
+packages = ["kbase"]
+
+[tool.setuptools.package-data]
+kbase = ["*.md"]
